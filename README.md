@@ -1,6 +1,7 @@
 # Startup app
 
 ```shell
+composer install
 cp -v .env .env.local
 cp -v phpunit.xml.dist phpunit.xml
 ```
@@ -18,4 +19,4 @@ symfony serve
 
 ## Navigation
 
-`/task/`
+`/task/` - **CRUD** format.
