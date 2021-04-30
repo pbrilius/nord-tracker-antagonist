@@ -15,3 +15,7 @@ Generate fixtures - `php bin/console doctrine:fixtures:load`.
 ```shell
 symfony serve
 ```
+
+## Navigation
+
+`/task/`
