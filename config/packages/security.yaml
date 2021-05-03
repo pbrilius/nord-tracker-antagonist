@@ -32,3 +32,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        # the 'path' value can be any valid regular expression
+        # (this one will match URLs like /api/post/7298 and /api/comment/528491)
+        - { path: ^/api/task$, roles: ROLE_USER }
+        - { path: ^/api/task/\d+$, roles: ROLE_USER }
+ 
