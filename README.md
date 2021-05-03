@@ -23,4 +23,5 @@ symfony serve
 - `/api/v1/task` - **REST** format
 
 Please consider *[Postman](https://g.co/kgs/ZNJ1Y1)* usage. REST authentication:
+
 - `X-AUTH-TOKEN`: `7cf7046f676bbc149803541c658deba9`

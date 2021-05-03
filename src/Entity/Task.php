@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use App\Repository\TaskRepository;
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=TaskRepository::class)
  */
-class Task
+class Task implements JsonSerializable
 {
     /**
      * @ORM\Id
@@ -88,5 +89,16 @@ class Task
         $this->timeSpent = $timeSpent;
 
         return $this;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'comment' => $this->Comment,
+            'dateStarted' => $this->dateStarted->format('Y-m-d H:i:s'),
+            'timeSpent' => $this->timeSpent->format('%hh %mm'),
+        ];
     }
 }
