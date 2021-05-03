@@ -25,3 +25,7 @@ symfony serve
 Please consider *[Postman](https://g.co/kgs/ZNJ1Y1)* usage. REST authentication:
 
 - `X-AUTH-TOKEN`: `7cf7046f676bbc149803541c658deba9`
+
+Export to *XSLX*:
+
+- `curl -H "X-AUTH-TOKEN: 7cf7046f676bbc149803541c658deba9" http://localhost:8000/export --output table-long.xslx`
