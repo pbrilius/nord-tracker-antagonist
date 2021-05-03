@@ -21,6 +21,7 @@ symfony serve
 
 - `/task/` - **CRUD** format
 - `/api/v1/task` - **REST** format
+- `/export` - *XSLX* format
 
 Please consider *[Postman](https://g.co/kgs/ZNJ1Y1)* usage. REST authentication:
 
