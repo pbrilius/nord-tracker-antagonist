@@ -36,4 +36,5 @@ security:
         # (this one will match URLs like /api/post/7298 and /api/comment/528491)
         - { path: ^/api/v1/task$, roles: ROLE_USER }
         - { path: ^/api/v1/task/\d+$, roles: ROLE_USER }
+        - { path: ^/export$, roles: ROLE_USER }
  
