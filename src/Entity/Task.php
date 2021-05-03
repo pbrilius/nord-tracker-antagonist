@@ -98,7 +98,7 @@ class Task implements JsonSerializable
             'title' => $this->title,
             'comment' => $this->Comment,
             'dateStarted' => $this->dateStarted->format('Y-m-d H:i:s'),
-            'timeSpent' => $this->timeSpent->format('%hh %mm'),
+            'timeSpent' => $this->timeSpent->format('%dd %hh %mm'),
         ];
     }
 }
