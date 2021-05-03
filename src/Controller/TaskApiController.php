@@ -41,7 +41,7 @@ class TaskApiController extends AbstractController
         $task->setTitle($request->get('title'));
         $task->setComment($request->get('comment'));
         $task->setTimeSpent(
-            \DateInterval::createFromDateString($request->get('time-spend'))
+            \DateInterval::createFromDateString($request->get('time-spent'))
         );
         $task->setDateStarted(
             new \DateTime($request->get('date-started'))
@@ -71,7 +71,7 @@ class TaskApiController extends AbstractController
         if (!$task) {
             throw new NotFoundHttpException();
         }
-        
+
         $em->remove($task);
         $em->flush();
 
@@ -103,5 +103,20 @@ class TaskApiController extends AbstractController
         $em->flush();
 
         return $this->json($task);
+    }
+
+    #[Route('/api/v1/task', methods: ['GET'])]
+    /**
+     * Listing
+     *
+     * @return JsonResponse
+     */
+    public function list(): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $taskRepository = $em->getRepository(Task::class);
+        
+        return $this->json($taskRepository->findAll());
     }
 }
