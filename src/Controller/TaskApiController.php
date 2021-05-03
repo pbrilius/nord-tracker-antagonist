@@ -45,4 +45,24 @@ class TaskApiController extends AbstractController
 
         return $this->json($task);
     }
+
+    /**
+     * Deletion
+     *
+     * @param integer $id ID
+     * 
+     * @return Response
+     */
+    #[Route('/api/v1/task/{id}', methods: ['DELETE'])]
+    public function delete(int $id): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $taskRepository = $em->getRepository(Task::class);
+        $task = $taskRepository->find($id);
+        $em->remove($task);
+        $em->flush();
+
+        return $this->json('');
+    }
 }
