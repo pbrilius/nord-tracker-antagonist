@@ -15,6 +15,12 @@ security:
             lazy: true
             provider: app_user_provider
 
+            logout: ~
+
+            guard:
+                authenticators:
+                    - App\Security\TokenAuthenticator
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
